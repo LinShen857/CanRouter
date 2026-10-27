@@ -14,6 +14,12 @@ depends:
 #include "CanDevice.hpp"
 #include "can.hpp"
 
+struct CanRouterBusConfig
+{
+  bool extended_frames = true;
+  bool fd_frames = true;
+};
+
 class CanRouter
 {
  public:
@@ -24,11 +30,7 @@ class CanRouter
     CAN3
   };
 
-  struct BusConfig
-  {
-    bool extended_frames = true;
-    bool fd_frames = true;
-  };
+  using BusConfig = CanRouterBusConfig;
 
   CanRouter(LibXR::FDCAN& can1, LibXR::FDCAN& can2, LibXR::FDCAN& can3,
             BusConfig cfg1 = BusConfig(), BusConfig cfg2 = BusConfig(),
