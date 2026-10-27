@@ -31,8 +31,8 @@ class CanRouter
   };
 
   CanRouter(LibXR::FDCAN& can1, LibXR::FDCAN& can2, LibXR::FDCAN& can3,
-            const BusConfig& cfg1 = {}, const BusConfig& cfg2 = {},
-            const BusConfig& cfg3 = {});
+            BusConfig cfg1 = BusConfig(), BusConfig cfg2 = BusConfig(),
+            BusConfig cfg3 = BusConfig());
 
   CanRouter(const CanRouter&) = delete;
   CanRouter& operator=(const CanRouter&) = delete;

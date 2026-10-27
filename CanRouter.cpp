@@ -35,7 +35,7 @@ void RegisterFrames(LibXR::FDCAN& can, const CallbackT& cb, bool extended_frames
 }  // namespace
 
 CanRouter::CanRouter(LibXR::FDCAN& can1, LibXR::FDCAN& can2, LibXR::FDCAN& can3,
-                     const BusConfig& cfg1, const BusConfig& cfg2, const BusConfig& cfg3)
+                     BusConfig cfg1, BusConfig cfg2, BusConfig cfg3)
 {
   RegisterBus(can1, Bus::CAN1, cfg1);
   RegisterBus(can2, Bus::CAN2, cfg2);
